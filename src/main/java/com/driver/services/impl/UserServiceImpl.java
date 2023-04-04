@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserServiceImpl implements UserService, UserService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository3;
@@ -22,9 +22,9 @@ public class UserServiceImpl implements UserService, UserService {
     @Override
     public User register(String username, String password, String countryName) throws Exception{
         User user = new User();
-        user.setUserName(username);
+        user.setUsername(username);
         user.setPassword(password);
-        user.getCountry().setCountryName(CountryName.valueOf(countryName));
+        user.getOriginalCountry().setCountryName(CountryName.valueOf(countryName));
 
         userRepository3.save(user);
     }
