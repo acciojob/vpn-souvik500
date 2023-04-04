@@ -1,10 +1,13 @@
 package com.driver.model;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Builder
 @Table(name = "admins")
 public class Admin {
     @Id
